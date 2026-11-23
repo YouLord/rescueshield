@@ -26,7 +26,7 @@
             line-height: 1.6;
         }
 
-        /* 3D Canvas Background */
+    
         #canvas-container {
             position: absolute;
             top: 0; left: 0;
@@ -36,7 +36,7 @@
             background: radial-gradient(circle at center, #1a0b2e 0%, var(--bg) 70%);
         }
 
-        /* Навигация */
+        
         header {
             position: fixed;
             top: 0; width: 100%;
@@ -66,7 +66,7 @@
 
         .nav-links a:hover { color: var(--accent); }
 
-        /* Главный экран */
+        
         .hero {
             position: relative; z-index: 10;
             height: 100vh;
@@ -184,7 +184,7 @@
 
         .card p { color: var(--muted); font-size: 14px; }
 
-        /* Сетка терминала */
+    
         .terminal {
             background: #08080a;
             border: 1px solid var(--border);
@@ -210,9 +210,7 @@
 
         .term-line { margin-bottom: 5px; min-height: 20px; }
         .term-green { color: #27c93f; }
-        .term-purple { color: var(--accent); }
-
-        /* --- БЛОК: 3D КАРТА --- */
+        .term-purple { color: 
         .map-section {
             position: relative; z-index: 10;
             padding: 60px 5%;
@@ -304,7 +302,7 @@
         }
         #map-popup span { color: #ff3333; font-weight: bold; }
 
-        /* Блок поддержки */
+        
         .support-section {
             position: relative; z-index: 10;
             padding: 80px 5%;
@@ -343,16 +341,13 @@
 
         .support-btn svg { width: 20px; height: 20px; fill: currentColor; }
 
-        /* Футер */
+    
         footer {
             position: relative; z-index: 10;
             text-align: center; padding: 40px;
             border-top: 1px solid var(--border);
             color: var(--muted); font-size: 12px;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        /* --- МОДАЛЬНОЕ ОКНО ДЛЯ БЕТА-ВЕРСИИ --- */
+            font-family: 'JetBrains Mono', 
         .modal-overlay {
             display: none;
             position: fixed;
@@ -425,10 +420,10 @@
         <p>Не просто сканер. Инструмент для восстановления системы, когда антивирусы бессильны.</p>
         
         <div class="btn-group">
-            <!-- СТАРАЯ ССЫЛКА БЕЗ ИЗМЕНЕНИЙ -->
+            
             <a href="https://drive.google.com/uc?export=download&id=17wMdtN7ehEPgvK0ZDSdZdu3t6w14j8Ba" class="btn" target="_blank">СКАЧАТЬ БЕСПЛАТНО</a>
             
-            <!-- НОВАЯ КНОПКА ДЛЯ БЕТЫ -->
+            
             <button class="btn btn-beta" onclick="openBetaModal()">СКАЧАТЬ БЕТА-ВЕРСИЮ</button>
         </div>
     </main>
@@ -470,9 +465,7 @@
             </div>
             <div id="terminal-output"></div>
         </div>
-    </section>
-
-    <!-- БЛОК: 3D КАРТА АКТИВНОСТИ -->
+    </
     <section class="map-section" id="map">
         <h2 class="section-title">Гео-Мониторинг Угроз</h2>
         <div class="map-wrapper" id="map-wrapper">
@@ -488,7 +481,7 @@
         </div>
     </section>
 
-    <!-- БЛОК: ПОДДЕРЖКА -->
+    
     <section class="support-section" id="support">
         <h2 class="section-title" style="margin-bottom: 20px;">Связаться с нами</h2>
         <p style="color: var(--muted); max-width: 500px; margin: 0 auto;">Если нашел баг, хочешь предложить идею или нужна помощь — пиши.</p>
@@ -509,7 +502,7 @@
         <p>© 2026 RescueShield. Разработано для реальной защиты.</p>
     </footer>
 
-    <!-- МОДАЛЬНОЕ ОКНО -->
+
     <div class="modal-overlay" id="beta-modal">
         <div class="modal-content">
             <h2>ДОСТУП К БЕТЕ</h2>
@@ -522,10 +515,10 @@
         </div>
     </div>
 
-    <!-- Three.js для 3D -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // --- 1. 3D СФЕРА НА ФОНЕ ---
+        
         const container = document.getElementById('canvas-container');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -562,7 +555,7 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
-        // --- 2. ТЕРМИНАЛ ---
+        
         const lines = [
             "root@rescueshield:~# <span class='term-purple'>./start_scan --deep</span>",
             "<span class='term-green'>[+] Ядро защиты инициализировано. Secure Boot: ON</span>",
@@ -604,7 +597,7 @@
         }
         setTimeout(typeLine, 1000);
 
-        // --- 3. ИНТЕРАКТИВНАЯ 3D КАРТА ---
+        
         const mapWrapper = document.getElementById('map-wrapper');
         const mapContainer = document.getElementById('map-canvas');
         const mapPopup = document.getElementById('map-popup');
@@ -742,9 +735,9 @@
             mapRenderer.setSize(newWidth, newHeight);
         });
 
-        // --- 4. ЛОГИКА МОДАЛЬНОГО ОКНА БЕТА-ВЕРСИИ ---
+        
         const BETA_CODE = "@codesyoulord";
-        // ТВОЯ ССЫЛКА НА БЕТУ (ID: 1yCK57DR4EWcrsu3qs9BZwq54c-1lsguO)
+        
         const BETA_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=1yCK57DR4EWcrsu3qs9BZwq54c-1lsguO";
 
         function openBetaModal() {
